@@ -1,2 +1,2 @@
-1) Datu kopu un YOLO algoritma modeļu apmācības un salīdzināšanas rezultāti ir redzami failā Rezultati.xlsx.
+1) Datu kopu un YOLO algoritma modeļu apmācības un salīdzināšanas rezultātus var apskatīt Rezultati.xlsx failā.
 2) 
