@@ -16,7 +16,7 @@ Vienkāršs uzlabojuma apraksts:
   ![Road_sign_in_bb](https://github.com/user-attachments/assets/8a5d8e48-4bcd-4c75-9aa7-9100446dbf5b)
 - Atbrīvojoties no liekas informācijas, var izmantot OCR, lai atpazītu tekstu. Rezultāts tiek paradīts nākoša attēlā.
 
-  ![image](https://github.com/user-attachments/assets/8f54d5b7-c07c-40c3-a949-c70f843bf588)
+  ![image](https://github.com/user-attachments/assets/3b6388ad-a6c2-4a5d-b904-59e7c7f5cf88)
 
 ---
 Turpmākie uzlabojumi:
