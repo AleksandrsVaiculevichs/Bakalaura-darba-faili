@@ -21,3 +21,4 @@ Vienkāršs uzlabojuma apraksts:
 ---
 Turpmākie uzlabojumi:
 - 
+- Pašlaik šis uzlabojums darbojas tikai ar atsevišķiem attēliem un spēj apstrādāt tikai vienu ceļa zīmes klasi. Nākotnē ir plānots paplašināt šīs sistēmas iespējas un pārbaudīt to video testēšanas laikā.
