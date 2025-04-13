@@ -22,7 +22,7 @@ Vienkāršs uzlabojums ar vienu attēlu:
 ---
 Uzlabojums ar video apstrādi:
 - 
-- Videoklipa apstrādei ir līdzīga sistēma kā vienai bildei. Taču šajā gadījumā kadri vispirms tiek izvilkti no videoklipa, tādējādi katru sekundi tiek izveidots jauns fails.
+- Videoklipa apstrādei ir līdzīga sistēma kā apstrādei ar vienu attēlū. Taču šajā gadījumā kadri vispirms tiek izvilkti no videoklipa, tādējādi katru sekundi tiek izveidots jauns fails.
 - Pēc tam ir papildu funkcija, kas pagriež attēlus un noņem tumšās joslas sānos.
 - Talāk iet funkcija kas aplūko katru izveidotu attēlu un izmanto yolo, lai atpazītu zīmi. Testēšanas laikā tiek veikta pārbaude, ja zīmes klase atbilst izvēlētām, tiek saglabātas tās koordinātas. Nosaukums tiek saglabāts un pievienots masīvam. Pēc tam vēlreiz iet filtrēšana caur visām failām, ja faila nosaukums ir masīvā, tas tiek pārdēvēts uz citu nosaukumu turpmākajam darbam.
 - Un pēdējā funkcija ņem izveidoto attēlu no iepriekšējās funkcijas, pēc tam izmanto koordinātes un izgriež jaunu attēlu, pēc tam tajā tiek izmantota OCR.
