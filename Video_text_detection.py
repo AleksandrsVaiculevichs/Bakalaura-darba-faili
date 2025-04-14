@@ -3,7 +3,7 @@
 # https://github.com/ultralytics/yolov5/issues/388 
 # https://dev.to/andreygermanov/how-to-extract-all-detected-objects-from-image-and-save-them-as-separate-images-using-yolov82-and-opencv-3j99
 # https://blog.roboflow.com/how-to-use-easyocr/
-# https://builtin.com/data-science/python-ocr         --- FOR EDITING IMAGE
+# https://builtin.com/data-science/python-ocr         
 # https://stackoverflow.com/questions/41586429/opencv-saving-images-to-a-particular-folder-of-choice
 # https://stackoverflow.com/questions/33311153/python-extracting-and-saving-video-frames
 # https://stackoverflow.com/questions/56368107/rotation-of-images
@@ -20,6 +20,8 @@
 # https://stackoverflow.com/questions/52873938/referring-to-arrays-from-another-function
 # https://github.com/ultralytics/ultralytics/issues/5097
 # https://stackoverflow.com/questions/72507868/how-to-read-the-text-by-easyocr-correctly
+# https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory
+
 
 from ultralytics import YOLO
 import cv2
@@ -35,7 +37,8 @@ path_with_frames = 'C:/coding and apps/codes/frame_folder'
 path_for_yolo_trained_frames = 'C:/coding and apps/codes'
 folder_name_with_detections = 'C:/coding and apps/codes/yolo_trained_frame_folder'
 boxes = []
-files_to_rename=[]
+files_for_work=[]
+
 '''
 Funkcija, kas izgriež kadrus, šajā gadījumā tā ir iestatīta tā,
 lai funkcija izgriež katru video sekundi, ja nepieciešams 
@@ -69,7 +72,7 @@ un pievienots masīvam. Pēc tam vēlreiz caur visām failām, ja faila nosaukum
 uz citu nosaukumu turpmākajam darbam.
 '''
 def Yolo_train_on_ready_frames (path_with_frames_folder):
-    global boxes, x1, x2, y1, y2
+    global boxes, x1, x2, y1, y2, files_for_work
     for folder_w_images in glob.glob(os.path.join(path_with_frames_folder, "*.jpg")):
         open_images = Image.open(folder_w_images)
         results = model(open_images,
@@ -88,35 +91,28 @@ def Yolo_train_on_ready_frames (path_with_frames_folder):
                 x1, y1, x2, y2 = [round(x) for x in cords]
                 boxes.append([x1, y1, x2, y2, score, cls])
                 print("Road sign coordinates are: ", x1, y1, x2, y2)
-
                 file_name_with_detection = os.path.basename(folder_w_images)
-                files_to_rename.append(file_name_with_detection)
-                print ("Files for rename are:", files_to_rename)
-
-                for file_name in os.listdir(folder_name_with_detections):
-                    if file_name in files_to_rename:
-                        old_name=os.path.join(folder_name_with_detections,file_name)
-                        new_name=os.path.join(folder_name_with_detections, "Image_with_detection.jpg")
-                        os.rename(old_name, new_name)
-                        print("Image with detected road sign is renamed.")
+                files_for_work.append(file_name_with_detection)
+                print ("Files for work are:", files_for_work)
             else:
                 continue
     
+'''
+Šī funkcija apstrādā atlasīto kadru failus. Tā ņem lapu no izvēlētajiem kadriem un izgriež attēlu
+atbilstoši iepriekš iegūtajām koordinātēm. Tā kā ceļa zīmes izmērs var būt atšķirīgs, labāk ir iestatīt
+fiksētu izmēru, lai labāk atpazītu tekstu. Taču nākotnē ir nepieciešams uzlabot attēla kvalitāti, izmantojot papildu metodes.
+'''
 
 def Create_new_image_and_detect_text():
-    path_to_sel_image = 'C:/coding and apps/codes/yolo_trained_frame_folder/Image_with_detection.jpg'
-    Image = cv2.imread(path_to_sel_image) # vajag, jo numpy izgriešana nevar apstrādāt ceļu
-    cropping_image = Image[int(y1):int(y2), int(x1):int(x2)]
-    cv2.imwrite('Cropped_image.jpg', cropping_image)
-    Image_editing = cropping_image
-    # norm_img = np.zeros((Image_editing.shape[0], Image_editing.shape[1]))
-    # Image_editing = cv2.normalize(Image_editing, norm_img, 0, 255, cv2.NORM_MINMAX)
-    # #mage_editing = cv2.threshold(Image_editing, 100, 255, cv2.THRESH_BINARY)[1]
-    # Image_editing = cv2.GaussianBlur(Image_editing, (1, 1), 0)
-    cv2.imwrite('Edited_cropped_image.jpg', Image_editing)
-    reader = easyocr.Reader(['lv'])
-    result = reader.readtext(Image_editing, detail=0)
-    print("Detected text:", result)
+    for file in files_for_work:
+        images = cv2.imread(os.path.join(folder_name_with_detections, file))
+        cropping_image = images[int(y1):int(y2), int(x1):int(x2)]
+        new_image_size = (300, 300)
+        resize_img = cv2.resize(cropping_image, new_image_size)
+        cv2.imwrite('Cropped_image.jpg', resize_img)
+        reader = easyocr.Reader(['lv'])
+        result = reader.readtext(resize_img, detail=0)
+        print("Detected text:", result)
     
 
     
