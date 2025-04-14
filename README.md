@@ -24,8 +24,8 @@ Uzlabojums ar video apstrādi:
 - 
 - Videoklipa apstrādei ir līdzīga sistēma kā apstrādei ar vienu attēlū. Taču šajā gadījumā kadri vispirms tiek izvilkti no videoklipa, tādējādi katru sekundi tiek izveidots jauns fails.
 - Pēc tam ir papildu funkcija, kas pagriež attēlus un noņem tumšās joslas sānos.
-- Talāk iet funkcija kas aplūko katru izveidotu attēlu un izmanto yolo, lai atpazītu zīmi. Testēšanas laikā tiek veikta pārbaude, ja zīmes klase atbilst izvēlētām, tiek saglabātas tās koordinātas. Nosaukums tiek saglabāts un pievienots masīvam. Pēc tam vēlreiz iet filtrēšana caur visām failām, ja faila nosaukums ir masīvā, tas tiek pārdēvēts uz citu nosaukumu turpmākajam darbam.
+- Talāk iet funkcija kas aplūko katru izveidotu attēlu un izmanto yolo, lai atpazītu zīmi. Testēšanas laikā tiek veikta pārbaude, ja zīmes klase atbilst izvēlētām, tiek saglabātas tās koordinātas. Nosaukums tiek saglabāts un pievienots masīvam. 
 - Un pēdējā funkcija ņem izveidoto attēlu no iepriekšējās funkcijas, pēc tam izmanto koordinātes un izgriež jaunu attēlu, pēc tam tajā tiek izmantota OCR.
 
-  ![image](https://github.com/user-attachments/assets/74a4df24-195f-4fe8-b411-0c9c63f184e8)
-- Variants ar video apstrādi nav galīgais, ir jāveic papildu testēšanu. Var arī redzēt, ka var tikt izmantota papildu attēlu apstrāde, jo easyocr slikti atpazīst tekstu. Arī pašlaik nav gluži ērti izmantot šo kodu, jo pēc yolo apstrādes ir pastāvīgi jādzēš kadrus, nākotnē tas tiks uzlabots. Tāpat šobrīd nav skaidrs, kā kods uzvedīsies, ja būs vairākas ceļa zīmes.
+  ![image](https://github.com/user-attachments/assets/9b07ea6e-620e-46c1-9284-f18e0067b5c5)
+- Variants ar video apstrādi nav galīgais, ir jāveic papildu testēšanu. Var arī redzēt, ka var tikt izmantota papildu attēlu apstrāde, pašlaik, pievienojot attēlu izmēru fiksāciju sistēma OCR jau spēj atpazīst visus burtus pareizi. Bet nepieciešami papildu uzlabojumi.
