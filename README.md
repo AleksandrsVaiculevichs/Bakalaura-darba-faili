@@ -5,6 +5,13 @@ Pamatinformācija
 3) 4 Kadri no video testēšanās var redzēt arī png attēlā ar to pašu nosaukumu.
 4) Tiek pievienots uzlabojums ar vienīgo attēlu, kur tiek pievienota teksta atpazīšana no ceļazīmēm.
 5) Tiek pārstradāts iepriekšējāis uzlabojums, lai apstradāt video formātu. (Nepieciešams papildināt)
+---
+Galvēna idēja
+-
+
+  ![Untitled](https://github.com/user-attachments/assets/60d28b1d-07d0-4969-9829-69d55388ee82)
+  
+Ideja ir tāda, ka, kad tiek filmētas ceļa zīmes, yolo apstrādā katru kadru un saglabā visu zīmju koordinātas. Ja yolo saglabā koordinātes, tas var izgriezt atrasto saturu. Tādējādi ir iespējams izgriezt tikai ceļa zīmi. Pēc tam, apstrādājot attēlu, uzlabojot tā kvalitāti vai izmēru, var izmantot OCR, kas atradīs tekstu uz ceļa zīmēm.
 
 ---
 Vienkāršs uzlabojums ar vienu attēlu:
