@@ -39,4 +39,4 @@ Uzlabojums ar video apstrādi:
   ![image](https://github.com/user-attachments/assets/c50bc613-7778-4ae5-a465-376b8fc1e484)
 
 
-- Variants ar video apstrādi nav galīgais, ir jāveic papildu testēšanu. Var arī redzēt, ka var tikt izmantota papildu attēlu apstrāde, pašlaik, pievienojot attēlu izmēru fiksāciju sistēma OCR jau spēj atpazīst visus burtus pareizi. Bet nepieciešami papildu uzlabojumi.
+- Variants ar video apstrādi nav galīgais, ir jāveic papildu testēšanu. Ja ceļa zīme atradīsies liela attālumā var būt grūtības ar teksta atpazīšanu, līdz ar to var būt implementēti papildus uzlabojumi.
