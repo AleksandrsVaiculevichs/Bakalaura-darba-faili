@@ -36,7 +36,7 @@ Uzlabojums ar video apstrādi:
 tātad cipari viens, divi... šaja gadījumā ir koordinātes apzimējumi, tas ir x1, x2, y1 un y2. Šī funkcija vispirms sadala koordinātas no šīs lapas uz updating_boxes, kas tagad izskatās šādi: [(coord, coord, coord, coord), (coord, coord, ...)]. Un pēc tam, tā kā ir ērtāk izmantot lielu koordinātu lapu, tā tālāk sadala tuples lapu uz convert_to_list, kas tagad izskatās šādi: 
 [coord, coord, coord, coord, ...]. Pēc tam tas printē visus rezultātus.
 - Talākā funkcija  iterē caur darba failiem, kuros ir saglabāti nosaukumi, nolasa attēlu nosaukumu, ņemot vērā pilnu ceļu. Pēc tam ar katru jaunu iterāciju tiek aprēķinātas 4 koordinātas lapā, no sākuma līdz beigām un katru reizi par +4. Tas ir iespējams, jo visas koordinātas nav sakārtotas un seko viena aiz otrai vienmērīgi, kas ļauj tās izmantot šādā veidā. Pēc tam iterē pār šīm koordinātēm, aprēķina x1, x2, y1, y2 un izgriež attēlu atbilstoši kadru koordinātēm. Pēc tam teksta labākai atpazīšanai var mainīt attēla izmēru, un vēl stradāt ar attēla kvalitātes uzlabojumiem, principā pietiek ar 300 x 300 izmēru, un attēls tiek saglabāts jaunā mapē.
-- Un pēdēja funkcija iterē caur visām failām un izmanto OCR lai atazīt tekstu.
+- Un pēdēja funkcija iterē caur visām failām un izmanto OCR lai atpazīt tekstu.
   
   ![image](https://github.com/user-attachments/assets/f968ec0a-35a1-4b11-8cff-bb05bd04e961)
 
