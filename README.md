@@ -29,4 +29,7 @@ Uzlabojums ar video apstrādi:
 
   ![image](https://github.com/user-attachments/assets/f968ec0a-35a1-4b11-8cff-bb05bd04e961)
 
+  ![image](https://github.com/user-attachments/assets/c50bc613-7778-4ae5-a465-376b8fc1e484)
+
+
 - Variants ar video apstrādi nav galīgais, ir jāveic papildu testēšanu. Var arī redzēt, ka var tikt izmantota papildu attēlu apstrāde, pašlaik, pievienojot attēlu izmēru fiksāciju sistēma OCR jau spēj atpazīst visus burtus pareizi. Bet nepieciešami papildu uzlabojumi.
