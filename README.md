@@ -32,8 +32,12 @@ Uzlabojums ar video apstrādi:
 - Videoklipa apstrādei ir līdzīga sistēma kā apstrādei ar vienu attēlū. Taču šajā gadījumā kadri vispirms tiek izvilkti no videoklipa, tādējādi katru sekundi tiek izveidots jauns fails.
 - Pēc tam ir papildu funkcija, kas pagriež attēlus un noņem tumšās joslas sānos.
 - Talāk iet funkcija kas aplūko katru izveidotu attēlu un izmanto yolo, lai atpazītu zīmi. Testēšanas laikā tiek veikta pārbaude, ja zīmes klase atbilst izvēlētām, tiek saglabātas tās koordinātas. Nosaukums tiek saglabāts un pievienots masīvam. 
-- Un pēdējā funkcija ņem izveidoto attēlu no iepriekšējās funkcijas, pēc tam izmanto koordinātes un izgriež jaunu attēlu, pēc tam tajā tiek izmantota OCR.
-
+- Sākotnēji yolo izveido tuples list, kas izskatās apmēram šādi: [(1, coord), (2, coord)...], 
+tātad cipari viens, divi... šaja gadījumā ir koordinātes apzimējumi, tas ir x1, x2, y1 un y2. Šī funkcija vispirms sadala koordinātas no šīs lapas uz updating_boxes, kas tagad izskatās šādi: [(coord, coord, coord, coord), (coord, coord, ...)]. Un pēc tam, tā kā ir ērtāk izmantot lielu koordinātu lapu, tā tālāk sadala tuples lapu uz convert_to_list, kas tagad izskatās šādi: 
+[coord, coord, coord, coord, ...]. Pēc tam tas printē visus rezultātus.
+- Talākā funkcija  iterē caur darba failiem, kuros ir saglabāti nosaukumi, nolasa attēlu nosaukumu, ņemot vērā pilnu ceļu. Pēc tam ar katru jaunu iterāciju tiek aprēķinātas 4 koordinātas lapā, no sākuma līdz beigām un katru reizi par +4. Tas ir iespējams, jo visas koordinātas nav sakārtotas un seko viena aiz otrai vienmērīgi, kas ļauj tās izmantot šādā veidā. Pēc tam iterē pār šīm koordinātēm, aprēķina x1, x2, y1, y2 un izgriež attēlu atbilstoši kadru koordinātēm. Pēc tam teksta labākai atpazīšanai var mainīt attēla izmēru, un vēl stradāt ar attēla kvalitātes uzlabojumiem, principā pietiek ar 300 x 300 izmēru, un attēls tiek saglabāts jaunā mapē.
+- Un pēdēja funkcija iterē caur visām failām un izmanto OCR lai atazīt tekstu.
+  
   ![image](https://github.com/user-attachments/assets/f968ec0a-35a1-4b11-8cff-bb05bd04e961)
 
   ![image](https://github.com/user-attachments/assets/c50bc613-7778-4ae5-a465-376b8fc1e484)
