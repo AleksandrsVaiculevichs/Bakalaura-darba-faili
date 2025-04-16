@@ -27,5 +27,6 @@ Uzlabojums ar video apstrādi:
 - Talāk iet funkcija kas aplūko katru izveidotu attēlu un izmanto yolo, lai atpazītu zīmi. Testēšanas laikā tiek veikta pārbaude, ja zīmes klase atbilst izvēlētām, tiek saglabātas tās koordinātas. Nosaukums tiek saglabāts un pievienots masīvam. 
 - Un pēdējā funkcija ņem izveidoto attēlu no iepriekšējās funkcijas, pēc tam izmanto koordinātes un izgriež jaunu attēlu, pēc tam tajā tiek izmantota OCR.
 
-  ![image](https://github.com/user-attachments/assets/9b07ea6e-620e-46c1-9284-f18e0067b5c5)
+  ![image](https://github.com/user-attachments/assets/f968ec0a-35a1-4b11-8cff-bb05bd04e961)
+
 - Variants ar video apstrādi nav galīgais, ir jāveic papildu testēšanu. Var arī redzēt, ka var tikt izmantota papildu attēlu apstrāde, pašlaik, pievienojot attēlu izmēru fiksāciju sistēma OCR jau spēj atpazīst visus burtus pareizi. Bet nepieciešami papildu uzlabojumi.
