@@ -1,10 +1,8 @@
 Pamatinformācija
 -
 1) Datu kopu un YOLO algoritma modeļu apmācības un salīdzināšanas rezultātus var apskatīt Rezultati.xlsx failā.
-2) Divu iegūto rezultātu salidzinājums ir redzāms pie png attēlā.
-3) 4 Kadri no video testēšanās var redzēt arī png attēlā ar to pašu nosaukumu.
-4) Tiek pievienots uzlabojums ar vienīgo attēlu, kur tiek pievienota teksta atpazīšana no ceļazīmēm.
-5) Tiek pārstradāts iepriekšējāis uzlabojums, lai apstradāt video formātu. (Nepieciešams papildināt)
+2) Tiek pievienots uzlabojums ar vienīgo attēlu, kur tiek pievienota teksta atpazīšana no ceļazīmēm.
+3) Tiek pārstradāts iepriekšējāis uzlabojums, lai apstradāt video formātu. 
 ---
 Galvēna idēja
 -
