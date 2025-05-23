@@ -42,5 +42,3 @@ tātad cipari viens, divi... šaja gadījumā ir koordinātes apzimējumi, tas i
 
   ![image](https://github.com/user-attachments/assets/c50bc613-7778-4ae5-a465-376b8fc1e484)
 
-
-- Variants ar video apstrādi nav galīgais, ir jāveic papildu testēšanu. Ja ceļa zīme atradīsies liela attālumā var būt grūtības ar teksta atpazīšanu, līdz ar to var būt implementēti papildus uzlabojumi.
