@@ -10,15 +10,15 @@ from ultralytics import YOLO
 import cv2
 import easyocr
 
-model = YOLO('C:/coding and apps/codes/runs/detect/train63/weights/best.pt')
+model = YOLO('C:/coding and apps/codes/runs/detect/train20/weights/YOLOV9S_best.pt')
 selected_image = cv2.imread('C:/coding and apps/codes/Testing images/test_img1.jpg')
 results = model(selected_image, save=True, conf=0.75)
 
 boxes = []
 for box in results[0].boxes:  
     cls = results[0].names[box.cls[0].item()]
-    if cls == "44": # 44 ir ceļa zīmes nosaukums
-        print("-- ZONA road sign is detected --")
+    if cls == "40": # 40 ir ceļa zīmes nosaukums
+        print("-- ZONA ceļa zīme ir atrasta --")
         cords = box.xyxy[0].tolist()
         score = box.conf[0].item() 
         x1, y1, x2, y2 = [round(x) for x in cords]
@@ -34,4 +34,4 @@ read_created_image = cv2.imread("Road_sign_in_bb.jpg")
 reader = easyocr.Reader(['lv'])
 result = reader.readtext(read_created_image, detail=0)
 
-print("Detected text:", result)
+print("Atpazīts teksts:", result)
