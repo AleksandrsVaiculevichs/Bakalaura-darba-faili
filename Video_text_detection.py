@@ -35,7 +35,7 @@ import os
 from PIL import Image
 import glob
 
-model = YOLO('C:/coding and apps/codes/runs/detect/train63/weights/best.pt')
+model = YOLO('C:/coding and apps/codes/runs/detect/train20/weights/YOLOV9S_best.pt')
 path_with_video = 'C:/coding and apps/codes/Text_detection/video_testing_text_det2.mp4'
 path_with_frames = 'C:/coding and apps/codes/frame_folder'
 path_for_yolo_trained_frames = 'C:/coding and apps/codes'
@@ -60,7 +60,7 @@ def extracting_frames ():
         success, frame = selected_video.read()
         if count%(1*fps) == 0:
             cv2.imwrite('frame_folder/frame%d.jpg' % count, frame)
-            print('Created new frame: ', success)
+            print('Izveidots jauns kadrs: ', success)
         count +=1
 
 '''
@@ -71,7 +71,7 @@ def rotating_frames (path_with_frames_folder) :
         opening_images = Image.open(folder_w_images).convert('RGB')
         rotaing_images = opening_images.rotate(-90, expand=True, fillcolor = (0,0,0,0))
         rotaing_images.save(folder_w_images)
-        print('Rotated frames succesfully!')
+        print('Kadrs bija pagriezts veiksmīgi!')
 
 '''
 Šī funkcija aplūko katru attēlu un izmanto yolo, lai atpazītu zīmi.  Testēšanas laikā tiek veikta
@@ -92,14 +92,14 @@ def Yolo_train_on_ready_frames (path_with_frames_folder):
         
         for box in results[0].boxes:  
             cls = results[0].names[box.cls[0].item()]
-            if cls == "44": # 44 ir ceļa zīmes nosaukums
-                print("Road sign is detected.")
+            if cls == "40": # 40 ir ceļa zīmes nosaukums
+                print("Ceļa zīme ir atrasta.")
                 cords = box.xyxy[0].tolist()
                 for i in enumerate(cords):
                     boxes.append(i)
                 file_name_with_detection = os.path.basename(folder_w_images)
                 files_for_work.append(file_name_with_detection)
-                print ("Files for work are:", files_for_work)
+                print ("Faili priekš darbai ir:", files_for_work)
             else:
                 continue
     
@@ -122,11 +122,11 @@ def Convert_list_of_tuples_to_list():
         
         convert_to_list = list(sum(updating_boxes, ()))
         
-        print ("Standart yolo coordinates in tuples:", boxes)
+        print ("Standarta veida YOLO kortežu koordinātes:", boxes)
         print()
-        print ("List of coordinates in tuples:", updating_boxes)
+        print ("Lapa ar koordinātem kortežu veidā:", updating_boxes)
         print()
-        print ("Converted list of coordinates:", convert_to_list)
+        print ("Konvertēta lapa ar koordinātēm:", convert_to_list)
         print()
 
 '''
@@ -150,7 +150,7 @@ def Crop_images_and_read_text():
             new_image_size = (300, 300)
             resize_img = cv2.resize(cropping_images, new_image_size)
             cv2.imwrite(f'Folder_with_cropped_frames/cropped_{file}.jpg', resize_img)
-            print ("Cropped coordinates in frame:", file)
+            print ("Izgrieztā ceļa zīme pēc koordinātām tiek saglabāta ar nosaukumu:", file)
 
 '''
 Un šeit iterējot caur visām failām var izmantot OCR un detektēt tekstu.
@@ -161,7 +161,7 @@ def Reading_text():
         cropped_frames = cv2.imread(os.path.join(folder_with_cropped, file))
         reader = easyocr.Reader(['lv'])
         result = reader.readtext(cropped_frames, detail=0)
-        print(f"Detected text for cropped frame {file}:", result)
+        print(f"Atpazīts teksts no izgriezta freima {file}:", result)
     
 
 extracting_frames()
